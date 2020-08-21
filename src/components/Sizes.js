@@ -1,15 +1,15 @@
 import React from 'react'
-
+import './size.css'
 const Sizes = ({selectedSizes, setSize}) =>  {
 
-    const cuisine_type = ['Cafe', 'Beverages', 'South Indian', 'North Indian', 'Maharashtrian', 'Fast Food', 'Indian'];
+    const sizes = ['Beverages', 'Fast Food', 'South Indian', 'Cafe', 'North Indian', 'Chinese'];
 
     return (
         <div className="sizes">
-            <h3>Cuisines</h3>
+            <h3>Cuisine</h3>
             <div className="size-list">
                 {
-                    cuisine_type.map((cuisine_type, index) => {
+                    sizes.map((cuisine_type, index) => {
                         return (
                             <button 
                                 className={ "cuisine_type" + (selectedSizes.includes(cuisine_type) ? " selected-cuisine_type" : "")}
