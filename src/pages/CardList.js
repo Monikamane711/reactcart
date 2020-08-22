@@ -1,8 +1,8 @@
 import React, { Fragment, useState, useEffect } from 'react';
 
-import Card from './Card';
+import ProductItem from './store/ProductItem';
 
-const CardList = ({products, addToCart}) => {
+const CardList = ({product}) => {
 
     const [delay, setDelay] = useState(true)
 
@@ -11,7 +11,7 @@ const CardList = ({products, addToCart}) => {
         setTimeout(() => {
             setDelay(false)
         }, 1000);
-    }, [products])
+    }, [product])
 
     return (
         <Fragment>
@@ -19,14 +19,13 @@ const CardList = ({products, addToCart}) => {
                 delay ? <img src="https://career.alliedvision.com/persis/images_avt/gicccccphy.gif" alt="loader" className="loader" />
                 :
                 <div>
-                    <span className="products-length">{products.length} Product(s) found.</span>
+                    <span className="products-length">{product.length} Foods found.</span>
                     <div className="card-list">
                         {
-                            products.length === 0 ? <p className="text-center">Sorry, No products of the specified categories :-(</p> :
-                            products.map(item => {
-                                return (
-                                    <Card key={item.id} data={item} addToCart={addToCart} />
-                                )
+                            product.length === 0 ? <p className="text-center">Sorry, No products of the specified categories :-(</p> :
+                            product.map(item => {
+                               
+                                
                             })
                         }
                     </div>
